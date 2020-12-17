@@ -1,0 +1,83 @@
+ <div style="background-color: white">
+
+  <div class="background-two">
+
+
+
+
+
+
+          <form class="example-form">
+
+
+
+
+
+
+
+
+              <p>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Book name" [(ngModel)]="name" name="name">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Author" [(ngModel)]="author" name="author">
+                </mat-form-field>
+              </p>
+
+              <p>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="ISBN number" [(ngModel)]="isbn" name="isbn">
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="year" [(ngModel)]="year" name="year">
+                  </mat-form-field>
+                </p>
+
+                <table class="example-full-width" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                        <mat-select placeholder="Category" [(ngModel)]="category" name="category">
+                            <mat-option *ngFor="let food of foods" [value]="food.value" >
+                              {{food.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                    </mat-form-field></td>
+
+                  </tr></table>
+
+                  <table class="example-full-width" cellspacing="0"><tr>
+                      <td><mat-form-field class="example-full-width">
+                          <mat-select placeholder="Condtion" [(ngModel)]="condition" name="condition">
+                              <mat-option *ngFor="let condition of conditions" [value]="condition.value" >
+                                {{condition.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                      </mat-form-field></td>
+
+                    </tr></table>
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Discription" [(ngModel)]="discription" name="discription">
+                      </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Price" [(ngModel)]="price" name="price">
+                    </mat-form-field>
+                  </p>
+
+
+
+                  <input type="file" name="image" [(ngModel)]="image" id="file" (change)="onFileChanged($event)" />
+
+
+
+
+
+          </form>
+          <button style="float: left;margin-left:35%;margin-top: 2%;background-color: #FF4D00;color: white;" mat-raised-button (click)="addBookDetailsDB()" >Add item</button>
+
+
+
+
+
+    </div>
+    </div>

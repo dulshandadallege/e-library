@@ -1,0 +1,129 @@
+<div class="background">
+
+  <div class="background-two" >
+
+
+      <mat-card class="login" >
+
+        <mat-card-title style="text-align: center">Login</mat-card-title>
+        <hr>
+
+          <form class="example-form">
+
+
+
+
+              <p>
+                <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Username or email address"  required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input matInput type="text" placeholder="Password" required [type]="hide ? 'password' : 'text'" >
+                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                </mat-form-field>
+              </p>
+
+
+
+
+
+
+            </form>
+
+             <mat-label style="color: red" *ngIf="loginError">There was a problem logging in. Please try again.</mat-label>
+
+            <button style="float: left;margin-left:15%;background-color: #FF4D00;color: white;" mat-raised-button  (click)="login()"   >Log in</button>
+
+
+        </mat-card>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <mat-card  class="register" >
+
+            <mat-card-title style="text-align: center">Register</mat-card-title>
+            <hr>
+
+              <form  class="example-form">
+
+
+
+
+                  <p>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="First name " required  [(ngModel)]="fname" name="fname">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Last name " [(ngModel)]="lname" name="lname" required
+                     >
+                    </mat-form-field>
+                  </p>
+
+                  <table class="example-full-width" cellspacing="0"><tr>
+                      <td><mat-form-field class="example-full-width">
+                          <mat-select placeholder="Nationality" [(ngModel)]="nationality" name="nationality">
+                              <mat-option *ngFor="let food of nationalities" [value]="food.value" >
+                                {{food.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                      </mat-form-field></td>
+
+                    </tr></table>
+
+                  <p>
+
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Address" [(ngModel)]="address" name="address" required
+                       >
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Mobile Number " [(ngModel)]="number" name="number"
+                        required
+                       >
+                      </mat-form-field>
+                    </p>
+
+                    <p>
+
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Email" [(ngModel)]="email" name="email" required
+                         >
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Password " [(ngModel)]="password" name="password"
+                          required
+                         >
+                        </mat-form-field>
+                      </p>
+
+                    <p>
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="picker"   placeholder="Date of Birth" [(ngModel)]="dob" name="dob" >
+                            <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                      </p>
+
+
+
+
+                    <button style="float: left;margin-left:15%;color:rgb(255, 255, 255);background-color: #FF4D00" mat-raised-button (click)="userRegDB()" >Register</button>
+
+
+                </form>
+
+
+
+
+            </mat-card>
+
+
+
+
+    </div>
+    </div>
+
+
